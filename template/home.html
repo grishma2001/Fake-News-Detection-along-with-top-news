@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=K2D:wght@100&display=swap" rel="stylesheet">
+    <title>Home</title>
+  </head>
+  <body style="font-family: 'K2D', sans-serif; background: whitesmoke;">
+
+      <div class="container-fluid" >
+                   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 80px;
+    width: 100%;
+    padding: 0 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only"></span></a>
+      <a class="nav-item nav-link" href="/chart">Graph</a>
+      <a class="nav-item nav-link" href="/news">News</a>
+    </div>
+  </div>
+</nav>
+        <h1 style="color: cornflowerblue; padding-top: 100px;" align="center">FAKE NEWS DETECTION</h1> <br />
+    <form method="POST">
+        <div align="center" class="form-group">
+      <label for="news"><h2>Enter News Headline</h2></label> <br /><br/>
+      <input type="text" name="news" id="news" class="form-control" placeholder="Enter Headline" />
+      <br />
+      <div align="center">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+    </form>
+</div>
+    <div style="background: whitesmoke;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 3px;
+    display: block;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+      {% for category,message in messages %}
+        <b>{{message}}<br /><br /> <br /><hr></b>
+      {% endfor %}
+    {% else %}
+    {% endif %}
+    {% endwith %}
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@100&display=swap" rel="stylesheet">
+</head>
+<style>
+  .btn-primary{
+    padding: 13px 33px;
+    background: #888888;
+    color: white;
+    border-radius: 10px;
+    border : none;
+  }
+  .btn-primary:hover{
+    padding: 13px 33px;
+    background: none !important;
+    color: #888888;
+    border-radius: 10px;
+    border : 1px solid #888888;
+  }
+  .form-group{margin-top:250px}
+.card-out{
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+</style>
+<body style="background-color: #fcfbf1; font-family: 'K2D';">
+<form method="POST">
+        <div align="center" class="form-group">
+      <label for="news"><h1 style="color: #888888;"><b>ENTER  NEWS  HEADLINE</b></h1></label>
+      <input style="padding : 10px; margin-bottom : 20px; width: 341px;" type="text" name="news" id="news" class="form-control" placeholder="Enter Headline" />
+
+      <div align="center">
+      <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+        </div>
+</form>
+<div class="card-out">
+{%for i in range(0,8)%}
+{{c[i]}}
+<br/>
+{%endfor%}
+</div>
+</body>
+</html>
